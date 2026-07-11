@@ -2,49 +2,68 @@
 
 ## Task ID
 
-ARCH-001
+MDE-001-SPEC
 
 ## Title
 
-Product Owner Decision Discovery and Architecture Lock Preparation.
+Market Data Engine Detailed Specification and Test Contract.
 
 ## Objective
 
-Collect and record the Product Owner decisions required to lock the system architecture, business-rule boundaries, and delivery scope before implementation begins.
+Define the complete, deterministic Market Data Engine contract for Binance USD-M Futures before implementation begins.
 
 ## In scope
 
-- Confirm product scope and supported operating modes.
-- Confirm exchange, market universe, timeframes, and strategy boundaries.
-- Confirm risk authority, execution controls, and trade-management boundaries.
-- Confirm persistence, reconciliation, deployment, security, monitoring, and notification requirements.
-- Record approved decisions in `docs/DECISIONS.md`.
-- Prepare architecture and business-rule updates based only on approved decisions.
-- Identify unresolved decisions, conflicts, dependencies, and risks.
+- Binance exchange-information and 24-hour ticker sources
+- Active USDT perpetual-symbol filtering
+- Dynamic Top 20 quote-volume ranking
+- Required 1-minute and 5-minute candle history
+- REST bootstrap behavior
+- WebSocket closed-candle stream behavior
+- Candle normalization, ordering, deduplication, and rolling buffers
+- Open-candle exclusion
+- Startup readiness and downstream processing gate
+- Missing, malformed, duplicate, stale, and unverifiable-data rejection
+- Reconnect, exponential backoff, and REST gap recovery
+- Per-stream freshness and health reporting
+- Explicit error and rejection contracts
+- Configuration boundaries and validation
+- Unit, integration, and recovery test matrix
+- Codex-ready implementation scope after Product Owner approval
 
 ## Out of scope
 
-- Application code
-- Database implementation
-- Exchange integration
-- Strategy implementation
-- Risk implementation
+- Strategy formulas or implementation
+- Risk calculation or implementation
+- Paper order execution
+- Trade management
+- Database schema implementation
 - Frontend implementation
 - Deployment configuration
-- Commit or push of implementation work
+- Live-money trading
+- Application code changes during this specification task
 
-## Dependency
+## Dependencies
 
-`FOUNDATION-001 — PASS`
+- `FOUNDATION-001 — PASS`
+- `ARCH-001 — PASS`
+- Locked architecture, business rules, and approved decisions on `main`
 
 ## Required outputs
 
-- Product Owner decision checklist
-- Approved decision record
-- Unresolved-decision list
-- Architecture-lock preparation summary
-- Exact next bounded task after approval
+- Market-data component boundary
+- Exact input and output data contracts
+- Required configuration and approved default values
+- Readiness, staleness, reconnect, and recovery rules
+- Acceptance criteria
+- Mandatory test matrix
+- Explicit unresolved-decision list, if any
+- One bounded Codex implementation task after specification approval
 
 ## Completion gate
 
-All mandatory Product Owner decisions are recorded, unresolved conflicts are explicitly listed, and the proposed architecture and business-rule boundaries are ready for Product Owner approval without introducing unapproved assumptions.
+Implementation may begin only when every behavior required by the Market Data Engine is deterministic, testable, consistent with the locked architecture, and approved without guessed values.
+
+## Execution owner
+
+This specification is prepared in the CEO control chat. Codex is not required until the approved implementation task is ready.
