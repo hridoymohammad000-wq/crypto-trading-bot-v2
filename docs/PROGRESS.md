@@ -2,13 +2,13 @@
 
 ## Current phase
 
-Governance and repository foundation.
+Architecture decision discovery and lock preparation.
 
 ## Status
 
-- Governance baseline: In progress
-- Repository documents: In progress
-- Architecture lock: Not started
+- Governance baseline: Complete
+- Repository documents: Complete
+- Architecture lock: In progress
 - Market Data Engine: Not started
 - Strategy Engine: Not started
 - Risk Engine: Not started
@@ -19,6 +19,11 @@ Governance and repository foundation.
 - Monitoring and recovery: Not started
 - End-to-end testing: Not started
 - Deployment: Not started
+
+## Verified milestones
+
+- `FOUNDATION-001` completed on 2026-07-11 from canonical remote repository evidence.
+- `ARCH-001` is the only active task.
 
 ## Completion reporting rule
 
