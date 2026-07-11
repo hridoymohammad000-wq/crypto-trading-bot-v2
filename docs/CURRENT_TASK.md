@@ -2,38 +2,49 @@
 
 ## Task ID
 
-FOUNDATION-001
+ARCH-001
 
 ## Title
 
-Establish governance and repository documentation baseline.
+Product Owner Decision Discovery and Architecture Lock Preparation.
 
 ## Objective
 
-Create the mandatory project records governed by Crypto Trading Bot Development Bible v2.0 — LOCKED.
+Collect and record the Product Owner decisions required to lock the system architecture, business-rule boundaries, and delivery scope before implementation begins.
 
 ## In scope
 
-- README
-- Master plan
-- Architecture register
-- Business-rules register
-- Decision register
-- Progress register
-- Current-task register
-- Test-report register
-- Deployment register
-- Change log
+- Confirm product scope and supported operating modes.
+- Confirm exchange, market universe, timeframes, and strategy boundaries.
+- Confirm risk authority, execution controls, and trade-management boundaries.
+- Confirm persistence, reconciliation, deployment, security, monitoring, and notification requirements.
+- Record approved decisions in `docs/DECISIONS.md`.
+- Prepare architecture and business-rule updates based only on approved decisions.
+- Identify unresolved decisions, conflicts, dependencies, and risks.
 
 ## Out of scope
 
 - Application code
-- Trading rules
-- Exchange selection
-- Database schema
-- Frontend design
+- Database implementation
+- Exchange integration
+- Strategy implementation
+- Risk implementation
+- Frontend implementation
 - Deployment configuration
+- Commit or push of implementation work
+
+## Dependency
+
+`FOUNDATION-001 — PASS`
+
+## Required outputs
+
+- Product Owner decision checklist
+- Approved decision record
+- Unresolved-decision list
+- Architecture-lock preparation summary
+- Exact next bounded task after approval
 
 ## Completion gate
 
-All required files exist on `main`, their contents are internally consistent, and the latest commit is verified.
+All mandatory Product Owner decisions are recorded, unresolved conflicts are explicitly listed, and the proposed architecture and business-rule boundaries are ready for Product Owner approval without introducing unapproved assumptions.
